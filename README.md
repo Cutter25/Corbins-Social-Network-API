@@ -1,2 +1,2 @@
 # Corbins-Social-Network-API
-Update ReadMe!
+Currently halted due to node issue
