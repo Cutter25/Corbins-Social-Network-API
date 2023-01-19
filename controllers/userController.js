@@ -4,7 +4,7 @@ module.exports = {
 
   // Get all users
 
-  getUsers(req, res) {
+  getAllUsers(req, res) {
     User.find()
       .then((users) => res.json(users))
       .catch((err) => res.status(500).json(err));
@@ -12,7 +12,7 @@ module.exports = {
 
   // Get a single user
 
-  getOneUser(req, res) {
+  getUsersById(req, res) {
     User.findOne({ _id: req.params.userId })
       .select('-__v')
       .then((user) =>
@@ -33,7 +33,7 @@ module.exports = {
 
   // Delete a user and associated posts
 
-  deleteUser(req, res) {
+  deleteUsers(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
         !user
@@ -66,7 +66,7 @@ module.exports = {
       });
   },
 
-  removeFriend(req, res) {
+  deleteFriend(req, res) {
     friends.findOneAndUpdate(
       { _id: req.params.friendId },
       { $pull: { friends: { friendId: req.params.friendId } } },

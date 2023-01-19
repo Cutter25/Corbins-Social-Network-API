@@ -12,7 +12,7 @@ module.exports = {
 
     // gets one thought
 
-    getOneThought(req, res) {
+    getThoughtsById(req, res) {
         Thought.findOne({ _id: req.params.applicationId })
         .then((thought) => !thought
             ? res.status(404).json({ message: 'Sorry! try searching for something else!' })
@@ -23,7 +23,7 @@ module.exports = {
 
     // creates thought
 
-    createThought(req, res) {
+    createThoughts(req, res) {
         Thought.create(req.body)
         .then((thought) => {
             return User.findOneAndUpdate(
@@ -46,7 +46,7 @@ module.exports = {
 
     // updates one thought
 
-    updateThought(req, res) {
+    updateThoughts(req, res) {
         Thought.findOneAndUpdate(
           { _id: req.params.thoughtId },
           { $set: req.body },
@@ -65,7 +65,7 @@ module.exports = {
 
       // deletes one thought
 
-      deleteThought(req, res) {
+      deleteThoughts(req, res) {
         Thought.findOneAndRemove({ _id: req.params.thoughtId })
           .then((thought) =>
             !thought
