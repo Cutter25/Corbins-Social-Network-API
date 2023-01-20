@@ -1,10 +1,16 @@
+// Requiring packages for node
+
 const mongoose = require('mongoose');
 const express = require('express');
 const db = require('./config/connection');
 const routes = require('./routes');
 
+// Setting port and app for express
+
 const PORT = 3001;
 const app = express();
+
+// App.use methods
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,4 +23,3 @@ db.once('open', () => {
       console.log(`API server running on port ${PORT}!`);
     });
   });
-  

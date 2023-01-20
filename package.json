@@ -1,0 +1,23 @@
+{
+  "name": "corbins-social-network-api",
+  "version": "1.0.0",
+  "description": "Update ReadMe!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cutter25/Corbins-Social-Network-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cutter25/Corbins-Social-Network-API/issues"
+  },
+  "homepage": "https://github.com/Cutter25/Corbins-Social-Network-API#readme",
+  "dependencies": {
+    "mongoose": "^6.8.4"
+  }
+}
