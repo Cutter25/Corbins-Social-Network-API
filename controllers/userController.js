@@ -31,6 +31,14 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
+  updateUsers(req, res) {
+    User.findOneAndUpdate(
+      { _id: req.params.userId },
+      { $set: req.body },
+      { runValidators: true, new: true },
+    )
+  },
+
   // Delete a user and associated posts
 
   deleteUsers(req, res) {
