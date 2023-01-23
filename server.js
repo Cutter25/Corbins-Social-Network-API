@@ -21,4 +21,3 @@ db.once('open', () => {
     });
   });
 
-  // Figured node out lol
