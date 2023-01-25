@@ -13,7 +13,7 @@ module.exports = {
     // gets one thought
 
     getThoughtsById(req, res) {
-        Thought.findOne({ _id: req.params.applicationId })
+        Thought.findOne({ _id: req.params.id })
         .then((thought) => !thought
             ? res.status(404).json({ message: 'Sorry! try searching for something else!' })
             : res.json(thought)
@@ -27,8 +27,8 @@ module.exports = {
         Thought.create(req.body)
         .then((thought) => {
             return User.findOneAndUpdate(
-                { _id: req.body.userId },
-                { $addToSet: { thoughts: thought._id } },
+                { _id: req.body.id },
+                { $addToSet: { thoughts: thought.id } },
                 { new: true }, 
             );
         })
